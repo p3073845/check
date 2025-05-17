@@ -1,0 +1,152 @@
+@media (max-width: 575px) {
+  .clientfilter{
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 500px) {
+  .table_flexheader {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  .app-search-box{
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 600px) {
+  .demos-show-btn {
+    display: none;
+  }
+}
+
+@media (max-width: 767.98px) {
+  
+  .addclient{
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+  body {
+    overflow-x: hidden;
+    padding-bottom: 80px;
+  }
+
+  .left-side-menu {
+    display: none;
+    z-index: 10 !important;
+  }
+
+  .sidebar-enable .left-side-menu {
+    display: block;
+  }
+
+  .content-page,
+  .enlarged .content-page {
+    margin-left: 0 !important;
+    padding: 0 10px;
+  }
+
+  .logo-box {
+    display: none;
+  }
+
+  .page-title-box .page-title {
+    display: block;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    line-height: 70px;
+  }
+
+  .page-title-box .page-title-right {
+    display: none;
+  }
+
+  .footer {
+    left: 0 !important;
+    text-align: center;
+  }
+
+  .right-bar {
+    overflow: auto;
+  }
+
+  .right-bar .slimscroll-menu {
+    height: auto !important;
+  }
+
+  .fc-toolbar .fc-center,
+  .fc-toolbar .fc-left,
+  .fc-toolbar .fc-right {
+    float: none;
+    display: block;
+    clear: both;
+    margin: 10px 0;
+  }
+
+  .fc .fc-toolbar > * > * {
+    float: none;
+  }
+
+  .fc-today-button {
+    display: none;
+  }
+
+  .wizard.vertical > .content,
+  .wizard.vertical > .steps,
+  .wizard > .steps > ul > li {
+    width: 100%;
+  }
+
+  li.paginate_button.next,
+  li.paginate_button.previous {
+    display: inline-block;
+    font-size: 1.5rem;
+  }
+
+  li.paginate_button {
+    display: none;
+  }
+
+  .dataTables_paginate ul {
+    text-align: center;
+    display: block;
+    margin: 1rem 0 0 !important;
+  }
+
+  div.dt-buttons {
+    display: inline-table;
+    margin-bottom: 1rem;
+  }
+  .legendLabel {
+    display: none;
+  }
+  .submit_btnbox{
+    margin-top: 15px;
+  }
+}
+
+@media (max-width: 991px){
+  .addclient{
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+}
+
+@media (min-width: 992px) {
+  .unsticky-layout .left-side-menu,
+  .unsticky-layout .navbar-custom {
+    position: absolute;
+  }
+
+}
+
+
+
+@media (min-width: 1025px) {
+  .navbar-custom .button-menu-mobile {
+    margin-left: 8px;
+  }
+}
