@@ -16,9 +16,9 @@ export const makeApiCall = async (method, url, data = null) => {
       url: `${API_BASE_URL}${url}`,
       headers: {
         Authorization: authHeader().Authorization,
-        "Content-Type": "application/json",
+        "Content-Type": "application/json"
       },
-      withCredentials: true,
+      withCredentials: false,
       data,
     };
 
