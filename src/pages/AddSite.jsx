@@ -84,11 +84,16 @@ const AddSite = () => {
       return;
     }
 
-    // Site name validation - requires at least one letter
-    const siteNameRegex = /^[a-zA-Z0-9]+$/;
-
+    // Site name validation - allows letters, numbers, spaces and some special characters
+    const siteNameRegex = /^[a-zA-Z0-9\s\-_.]+$/;
+  
     if (!siteNameRegex.test(formData.site_name)) {
-      toast.error("Please enter a valid Site Name", { toastId: 'site-name-invalid' });
+      toast.error("Site name can only contain letters, numbers, spaces, hyphens, underscores and dots", { toastId: 'site-name-invalid' });
+      return;
+    }
+    
+    if (formData.site_name.length < 2) {
+      toast.error("Site name must be at least 2 characters long", { toastId: 'site-name-length' });
       return;
     }
 

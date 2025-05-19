@@ -140,10 +140,12 @@ const AdminSlice = createSlice({
       })
       .addCase(adminMenusListAction.fulfilled, (state, action) => {
         state.loadingMenu = false;
+        state.loadingMenuUpdate = false;
         state.viewLogs = action.payload;
       })
       .addCase(adminMenusListAction.rejected, (state, action) => {
         state.loadingMenu = false;
+        state.loadingMenuUpdate = false;
         state.error = action.payload;
       })
       .addCase(updateAdminMenuAction.pending, (state) => {

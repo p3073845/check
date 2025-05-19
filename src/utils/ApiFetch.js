@@ -18,6 +18,7 @@ export const makeApiCall = async (method, url, data = null) => {
         Authorization: authHeader().Authorization,
         "Content-Type": "application/json",
       },
+      withCredentials: true,
       data,
     };
 

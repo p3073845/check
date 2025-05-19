@@ -30,7 +30,7 @@ const AdminMenusListModal = ({ show, onClose, adminId, menuList = [] }) => {
             menu_id: menu.menu_id,
             permission: menu.menu_id === 1 ? "true" : (permissions[menu.menu_id] || false).toString()
         }));
-        console.log('updatedPermissions', updatedPermissions);
+
         dispatch(updateAdminMenuAction({
             payload: {
                 admin_id: adminId,
@@ -42,6 +42,8 @@ const AdminMenusListModal = ({ show, onClose, adminId, menuList = [] }) => {
                 if (!response.error) {
                     toast.success(response.message, { toastId: `menu-update-success-${adminId}` });
                     onClose();
+                } else {
+                    throw new Error(response.message || 'Failed to update menu permissions');
                 }
             })
             .catch((error) => {
@@ -97,29 +99,29 @@ const AdminMenusListModal = ({ show, onClose, adminId, menuList = [] }) => {
                                     ))}
                                 </div>
                             </div>
-                        }
+                        }                        
                         <div className="modal-footer">
-
-                     
-                                
-                                <>
-                                    <button
-                                        type="button"
-                                        className="btn btn-secondary"
-                                        onClick={onClose}
-                                    >
-                                        Cancel
-                                    </button>
-                                    <button
-                                        type="button"
-                                        className="btn btn-color"
-                                        onClick={handleSubmit}
-                                        disabled={loadingMenuUpdate}
-                                    >
-                                        {loadingMenuUpdate ? 'Saving...' : 'Save Changes'}
-                                    </button>
-                                </>
-
+                            <button
+                                type="button"
+                                className="btn btn-secondary"
+                                onClick={onClose}
+                                disabled={loadingMenuUpdate}
+                            >
+                                Cancel
+                            </button>
+                            <button
+                                type="button"
+                                className="btn btn-color"
+                                onClick={handleSubmit}
+                                disabled={loadingMenuUpdate}
+                            >
+                                {loadingMenuUpdate ? (
+                                    <>
+                                        <span className="spinner-border spinner-border-sm mr-2" role="status" aria-hidden="true"></span>
+                                        Saving...
+                                    </>
+                                ) : 'Save Changes'}
+                            </button>
                         </div>
                     </div>
                 </div>
